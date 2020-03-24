@@ -1,36 +1,39 @@
 <% if user_signed_in? %>
 
-<input id="profile-id" name="profile-id" type="hidden" value="<%= current_user.profile.id %>">
+    <% if current_user.profile %>
+        <input id="profile-id" name="profile-id" type="hidden" value="<%= current_user.profile.id %>">
 
-<main>
+        <main>
 
-    <table>
-        <thead>
-            <tr>
-                <th colspan="2">My foods</th>
-            </tr>
-        </thead>
-        <tbody>
-        <% current_user.profile.whole_foods.each do |food| %>
-            <tr>
-                <td>1</td>
-                <td><%= food.name %></td>
-            </tr>
-        <% end %>
-        </tbody>
-    </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">My foods</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% current_user.profile.whole_foods.each do |food| %>
+                    <tr>
+                        <td>1</td>
+                        <td><%= food.name %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
 
-    <section id='search-container'>
-        <input id='food-item' type='text' placeholder='enter a food item' />
-        <button id='search-food'>Search</button>
+            <section id='search-container'>
+                <input id='food-item' type='text' placeholder='enter a food item' />
+                <button id='search-food'>Search</button>
 
-        <section id='results-container'>
-            <ul id='items'></ul>
-        </section>
+                <section id='results-container'>
+                    <ul id='items'></ul>
+                </section>
 
-    </section>
-    
-</main>
+            </section>
+        
+        </main>
+
+    <% end %>
 
 <% end %>
 
