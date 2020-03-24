@@ -10,20 +10,29 @@
   </head>
 
   <body>
+    <header>
+      <p>&nbsp;</p>
+      <%= link_to(root_path) do %> <h1>Vitrak</h1> <% end %>
+      <p>
+        <% if user_signed_in? %>
+          <strong><%= current_user.email %></strong><br />
+          <%= link_to "Edit account info", edit_user_registration_path %><br />
+          
+          <% if current_user.profile %>
+            <%= link_to("View profile", profile_path(current_user.profile)) %><br />
+          <% else %>
+            <%= link_to("Create profile", new_profile_path) %><br />
+          <% end %>
+          
+          <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %><br />
+          <%= link_to "Login", new_user_session_path %><br />
+        <% end %>
+      </p>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <p>
-      <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.first_name %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> |
-        <%= link_to "Login", new_user_session_path %>
-      <% end %>
-    </p>
-
     <%= yield %>
   </body>
 </html>

@@ -1,1 +1,86 @@
-<h1>Welcome</h1>
+<% if user_signed_in? %>
+
+<input id="profile-id" name="profile-id" type="hidden" value="<%= current_user.profile.id %>">
+
+<main>
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">My foods</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% current_user.profile.whole_foods.each do |food| %>
+            <tr>
+                <td>1</td>
+                <td><%= food.name %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+
+    <section id='search-container'>
+        <input id='food-item' type='text' placeholder='enter a food item' />
+        <button id='search-food'>Search</button>
+
+        <section id='results-container'>
+            <ul id='items'></ul>
+        </section>
+
+    </section>
+    
+</main>
+
+<% end %>
+
+<script>
+    const apiKey = 'mRxkKTHegAJZAQrg0Fc4enp5Ye5TyYqGMGzSzJQi'
+    const baseEndpoint = 'https://api.nal.usda.gov/fdc/v1/search?api_key=';
+    const usdaEndpoint = `${baseEndpoint}${apiKey}&requireAllWords=true&includeDataTypeList=Survey%20(FNDDS)&generalSearchInput=raw+`;
+    
+    const profileId = document.getElementById('profile-id').value;
+
+    const itemList = document.getElementById('items');
+    const searchFood = document.getElementById('search-food');
+    searchFood.addEventListener('click', getFood)
+    
+    let foodItems;
+
+    let listItem = document.createElement('li');
+
+    let addItem = document.createElement('button');
+    addItem.textContent = 'Add';
+    addItem.addEventListener('click', addToProfile);
+
+    function getFood() {
+        itemList.innerHTML = '';
+        foodValue = document.getElementById('food-item').value;
+        fetch(`${usdaEndpoint}${foodValue}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                foodItem = data.foods[0];
+                console.log(foodItem);
+                // foodItems.forEach(function(foodItem) {
+                    listItem.textContent = foodItem.description;
+                    listItem.setAttribute('data-fdcId', foodItem.fdcId);
+                    itemList.appendChild(listItem);
+                    itemList.appendChild(addItem);
+                // });
+            });
+    }
+    function addToProfile() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/whole_food', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            name: listItem.textContent,
+            fdcid: listItem.dataset.fdcid,
+            profile_id: profileId,
+        }));
+        location.reload();
+    }
+    
+</script>

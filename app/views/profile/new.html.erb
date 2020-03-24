@@ -1,0 +1,12 @@
+<%= form_for @profile do |f| %>
+
+  First name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Weight : <%= f.text_field :weight %><br />
+  Height : <%= f.text_field :height %><br />
+  Gender : <%= f.text_field :gender %><br />
+  Activity : <%= f.text_field :activity %><br />
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit %>
+
+<% end %>

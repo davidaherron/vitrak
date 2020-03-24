@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   root to: "home#index"
+
+  resources :profile, :as => :profiles
+  
+  post '/whole_food', to: 'whole_food#create'
+
+  devise_for :users
+
 end
