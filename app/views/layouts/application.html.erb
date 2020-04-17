@@ -7,32 +7,40 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
     <header>
-      <p>&nbsp;</p>
-      <%= link_to(root_path) do %> <h1>Vitrak</h1> <% end %>
+      <div>&nbsp;</div>
+      <h1><%= link_to(root_path) do %>VITRAK<% end %><br></h1>
+      <% if user_signed_in? %>
       <p>
         <% if user_signed_in? %>
-          <strong><%= current_user.email %></strong><br />
-          <%= link_to "Edit account info", edit_user_registration_path %><br />
-          
+          <!--<strong><%= current_user.email %></strong><br />-->
+          <strong><%= current_user.profile.first_name %></strong><br />
+          <!--<%= link_to "Edit account info", edit_user_registration_path %><br />-->
+
           <% if current_user.profile %>
             <%= link_to("View profile", profile_path(current_user.profile)) %><br />
           <% else %>
             <%= link_to("Create profile", new_profile_path) %><br />
           <% end %>
-          
+
           <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
         <% else %>
+          <!-- 
           <%= link_to "Sign up", new_user_registration_path %><br />
           <%= link_to "Login", new_user_session_path %><br />
+          -->
         <% end %>
       </p>
+      <% end %>
     </header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

@@ -14,13 +14,105 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+ /*
+ #96CA2D
+ #B5E655
+ #EDF7F2
+ #4BB5C1
+ #7FC6BC
+*/
 
- body {
-    font-family: 'Open Sans', sans-serif;
- }
+    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
- header {
-     display: flex;
-     justify-content: space-around;
- }
+    body {
+        font-family: 'Nunito', sans-serif;
+        color:#5c5653;
+        background-color:#fff;
+    }
+
+    h1, h2, h4, h5, h6 {
+        font-size: 5em;
+    }
+
+    h3 {
+        font-size: 3em;
+    }
+
+    a {
+        color: #5c5653;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #5c5653;
+    }
+
+    header {
+        /* margin-bottom: 100px; */
+        background-color:#4BB5C1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form label {
+        text-transform: lowercase;
+        font-size: 2em;
+        border: none;
+    }
+    form div.field label {
+        line-height: 3;
+    }
+    form input {
+        padding: 0 25px;
+        height: 100px;
+        font-size: 3em;
+        color: #5c5653;
+        border: 1px solid #4BB5C1;
+    }
+    form div.actions input {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        height: auto;
+        letter-spacing: 2px;
+        padding: 25px 50px;
+        background-color: #4BB5C1;
+        color: #fff;
+        margin: 50px 0 25px 0;
+    }
+    form div.pretty {
+        margin: 50px 0 0 0;
+    }
+
+    /* Logo-specific styles */
+    header > h1 {
+        color:#EDF7F2;
+        letter-spacing: 20px;
+    }
+    header > h1 > a {
+        text-decoration: none;
+    }
+    header > h1 > a:visited {
+        color:#EDF7F2;
+    }
+
+    .notice, .alert {
+        color: #96CA2D;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    /* Profile-specific styles */
+    header > p {
+        font-size: 2em;
+        color: #EDF7F2;
+        margin: auto 25px auto 0;
+        text-align: right;
+    }
+    body > header > p > a {
+        color: #EDF7F2!important;
+    }

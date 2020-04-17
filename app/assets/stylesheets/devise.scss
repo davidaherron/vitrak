@@ -2,3 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.devise {
+    margin-top: 100px;
+}
+div.devise {
+    h2 {
+        display: none;  
+    }
+}
+div.devise .shared-links {
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+}

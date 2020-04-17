@@ -1,3 +1,32 @@
 // Place all the styles related to the Profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    thead {
+        background-color:#7FC6BC;
+        font-size: 2.5em;
+    }
+    th {
+       padding: 5px;
+    }
+    td {
+        padding: 25px;
+        font-size: 2em;
+    }
+    
+    a {
+        margin: auto;
+        font-size: 3.5em;
+        color: #7FC6BC;
+        text-decoration: none;
+    }
+    a:visited {
+        font-size: 3.5em;
+        color: #7FC6BC;
+        text-decoration: none;
+    }
+}

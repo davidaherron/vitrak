@@ -1,0 +1,259 @@
+{
+	"nutrientCategories": [
+		{
+			"displayName" : "Calories",
+			"nutrients": [
+				{
+					"name": "calories",
+					"unit": "",
+					"source": "rda",
+					"amount": 2200,
+
+					"nutrientNumber": 208
+				}
+			]
+		},
+		{
+			"displayName" : "Macro Nutrients",
+			"nutrients": [
+				{
+					"name": "protein",
+					"unit": "g",
+					"source": "rda",
+					"amount": 56,
+
+					"nutrientNumber": 203
+				},
+				{
+					"name": "carbohydrate",
+					"unit": "g",
+					"source": "rda",
+					"amount": 130,
+
+					"nutrientNumber": 205
+				},
+				{
+					"name": "dietaryFiber", 
+					"unit": "g",
+					"source": "",
+					"amount": 30.8,
+
+					"nutrientNumber": 291
+				},
+				{
+					"name": "totalFat",
+					"unit": "kCalPercent",
+					"source": "amdr",
+					"amount": "25-35",
+
+					"nutrientNumber": 204
+				},
+				{
+					"name": "saturatedFat",
+					"unit": "kCalPercent",
+					"source": "dga",
+					"amount": 10,
+
+					"nutrientNumber": 606
+				},
+				{
+					"name": "linoleicAcid",
+					"unit": "g",
+					"source": "ai",
+					"amount": 10,
+
+					"nutrientNumber": 646
+				},
+				{
+					"name": "linolenicAcid",
+					"unit": "g",
+					"source": "ai",
+					"amount": 10,
+
+					"nutrientNumber": 0
+				}
+			]
+			
+		},
+		{
+			"displayName" : "Minerals",
+			"nutrients": [
+				{
+					"name": "calcium",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 1000,
+
+					"nutrientNumber": 301
+				},
+				{
+					"name": "iron",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 8,
+
+					"nutrientNumber": 303
+				},
+				{
+					"name": "magnesium",
+					"unit": "mg",
+					"source": "",
+					"amount": 420,
+
+					"nutrientNumber": 304
+				},
+				{
+					"name": "phosphorus",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 700,
+
+					"nutrientNumber": 305
+				},
+				{
+					"name": "potassium",
+					"unit": "mg",
+					"source": "ai",
+					"amount": 4700,
+
+					"nutrientNumber": 306
+				},
+				{
+					"name": "sodium",
+					"unit": "mg",
+					"source": "ai",
+					"amount": 2300,
+
+					"nutrientNumber": 307
+				},
+				{
+					"name": "zinc",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 11,
+
+					"nutrientNumber": 309
+				},
+				{
+					"name": "copper",
+					"unit": "mcg",
+					"source": "rda",
+					"amount": 900,
+
+					"nutrientNumber": 312
+				},
+				{
+					"name": "manganese",
+					"unit": "mg",
+					"source": "ai",
+					"amount": 2.3,
+
+					"nutrientNumber": 315
+				},
+				{
+					"name": "selenium",
+					"unit": "mcg",
+					"source": "rda",
+					"amount": 55,
+
+					"nutrientNumber": 317
+				}
+			]
+		},
+		{
+			"displayName" : "Vitamins",
+			"nutrients": [
+				{
+					"name": "vitamin_A",
+					"unit": "mcg",
+					"unitAdditional": "RAE",
+					"source": "rda",
+					"amount": 900,
+
+					"nutrientNumber": 320
+				},
+				{
+					"name": "vitamin_E",
+					"unit": "mg",
+					"unitAdditional": "AT",
+					"source": "rda",
+					"amount": 15,
+
+					"nutrientNumber": 323
+				},
+				{
+					"name": "vitamin_D",
+					"unit": "IU",
+					"source": "",
+					"amount": 600,
+
+					"nutrientNumber": 324
+				},
+				{
+					"name": "vitamin_C",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 90,
+
+					"nutrientNumber": 401
+				},
+				{
+					"name": "thiamin",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 1.2,
+
+					"nutrientNumber": 404
+				},
+				{
+					"name": "riboflavin",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 1.3,
+
+					"nutrientNumber": 405
+				},
+				{
+					"name": "vitamin_B6",
+					"unit": "mg",
+					"source": "rda",
+					"amount": 1.3,
+
+					"nutrientNumber": 415
+				},
+				{
+					"name": "vitamin_B12",
+					"unit": "mcg",
+					"source": "rda",
+					"amount": 2.4,
+
+					"nutrientNumber": 418
+				},
+				{
+					"name": "chloline",
+					"unit": "mg",
+					"source": "ai",
+					"amount": 550,
+
+					"nutrientNumber": 421
+				},
+				{
+					"name": "vitamin_K",
+					"unit": "mcg",
+					"source": "ai",
+					"amount": 120,
+
+					"nutrientNumber": 430
+				},
+				{
+					"name": "folate",
+					"unit": "mcg",
+					"unitAdditional": "DFE",
+					"source": "rda",
+					"amount": 400,
+
+					"nutrientNumber": 435
+				}
+			]
+		}
+	]}

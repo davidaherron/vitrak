@@ -1,38 +1,18 @@
 <% if user_signed_in? %>
 
     <% if current_user.profile %>
+
+
+
         <input id="profile-id" name="profile-id" type="hidden" value="<%= current_user.profile.id %>">
 
-        <main>
+        <main id="app"></main>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="3">My foods</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <% current_user.profile.whole_foods.each do |food| %>
-                    <tr>
-                        <td><%= food.id %></td>
-                        <td><%= food.name %></td>
-                        <td><%= button_to "Delete", whole_food_path(@food, :id => food.id), data: { confirm: "Are you sure?" }, method: :delete %></td>
-                    </tr>
-                <% end %>
-                </tbody>
-            </table>
-
-            <section id='search-container'>
-                <input id='food-item' type='text' placeholder='enter a food item' />
-                <button id='search-food'>Search</button>
-
-                <section id='results-container'>
-                    <ul id='items'></ul>
-                </section>
-            </section>
+        <script>
+        var event = new Event('loggedIn');
+        document.dispatchEvent(event);
+        </script>
         
-        </main>
-
     <% end %>
 
 <% end %>
