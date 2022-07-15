@@ -9,7 +9,7 @@
     "lodash": "^4.17.15",
     "pretty-checkbox": "^3.0.3",
     "rollup": "^2.6.1",
-    "svelte": "^3.20.1",
+    "svelte": "^3.49.0",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^3.7.1",
     "turbolinks": "^5.2.0"
